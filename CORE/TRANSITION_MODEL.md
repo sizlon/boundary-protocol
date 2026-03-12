@@ -74,7 +74,7 @@ A minimal conceptual transition structure includes:
 
 ```
 transition
-├─ transition_id
+├─ event_id
 ├─ intent_ref
 ├─ actor
 ├─ attempted_at
@@ -83,12 +83,12 @@ transition
 └─ to_state
 ```
 
-### transition_id
+### event_id
 
-Content-addressed identifier of the transition.
+Content-addressed identifier of the transition event artifact.
 
 ```
-transition_id = hash(transition_document)
+event_id = hash(transition_event_document)
 ```
 
 ### intent_ref
@@ -256,4 +256,3 @@ State
 ```
 
 This structure enables transparent and verifiable action histories across system boundaries.
-

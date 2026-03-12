@@ -6,7 +6,7 @@ It defines how systems record verifiable traces of **intent, actions, observatio
 
 The protocol does **not control systems**. Instead, it provides a structured way to make system behavior **traceable, verifiable, and accountable**.
 
-AI systems are the first major domain where such accountability infrastructure becomes necessary, but the protocol is designed to remain **general and system-agnostic**. :contentReference[oaicite:0]{index=0}
+AI systems are the first major domain where such accountability infrastructure becomes necessary, but the protocol is designed to remain **general and system-agnostic**.
 
 
 ---

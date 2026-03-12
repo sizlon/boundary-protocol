@@ -3,6 +3,6 @@
   "event_type": "intent_declared",
   "artifact_ref": "intent:sample:001",
   "timestamp": "2026-01-10T10:00:00Z",
-  "emitted_by": "operator_A",
+  "actor": "operator_A",
   "causal_refs": []
 }

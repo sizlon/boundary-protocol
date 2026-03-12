@@ -41,9 +41,9 @@ event-002 — Transition attempted
 ↓  
 event-003 — State observed  
 ↓  
-event-004 — Attestation recorded  
+event-004 — Attestation published  
 ↓  
-event-005 — Verdict evaluated  
+event-005 — Verdict issued  
 
 Each event references the artifact it introduces and may reference previous events to establish causal ordering.
 
@@ -81,7 +81,7 @@ Each event contains:
 Example event structure:
 
 event_id: event-002  
-event_type: transition  
+event_type: transition_attempted  
 artifact_ref: transition:sample:001  
 causal_refs:
 - event-001
@@ -122,9 +122,9 @@ Transition attempted
 ↓  
 State observed  
 ↓  
-Attestation recorded  
+Attestation published  
 ↓  
-Verdict evaluated  
+Verdict issued  
 
 The chain allows independent verification of the final verdict by tracing back through the underlying events and artifacts.
 
