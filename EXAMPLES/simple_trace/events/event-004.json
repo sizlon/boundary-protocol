@@ -1,0 +1,10 @@
+{
+  "event_id": "event:sample:004",
+  "event_type": "attestation_recorded",
+  "artifact_ref": "attestation:sample:001",
+  "timestamp": "2026-01-10T10:00:06Z",
+  "emitted_by": "monitor-service",
+  "causal_refs": [
+    "event:sample:003"
+  ]
+}

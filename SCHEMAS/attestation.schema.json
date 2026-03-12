@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boundaryprotocol.org/schemas/attestation.schema.json",
+  "title": "Boundary Protocol Attestation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "attestation_id",
+    "subject_state",
+    "observer",
+    "observed_at",
+    "claim"
+  ],
+  "properties": {
+    "attestation_id": {
+      "type": "string",
+      "description": "Deterministic identifier of the attestation."
+    },
+    "subject_state": {
+      "type": "string",
+      "description": "Reference to the state being attested."
+    },
+    "observer": {
+      "type": "string",
+      "description": "Identity producing the attestation."
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "claim": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "object" }
+      ],
+      "description": "Claim being asserted about the observed state."
+    },
+    "evidence": {
+      "type": ["object", "null"],
+      "description": "Optional supporting evidence."
+    }
+  }
+}

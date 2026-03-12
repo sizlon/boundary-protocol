@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boundaryprotocol.org/schemas/verdict.schema.json",
+  "title": "Boundary Protocol Verdict",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "verdict_id",
+    "intent_ref",
+    "transition_ref",
+    "evaluated_by",
+    "evaluated_at",
+    "result",
+    "evidence_refs"
+  ],
+  "properties": {
+    "verdict_id": {
+      "type": "string",
+      "description": "Deterministic identifier of the verdict."
+    },
+    "intent_ref": {
+      "type": "string"
+    },
+    "transition_ref": {
+      "type": "string"
+    },
+    "evaluated_by": {
+      "type": "string",
+      "description": "Identity producing the verdict."
+    },
+    "evaluated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "result": {
+      "type": "string",
+      "enum": ["PASS", "FAIL", "UNKNOWN"]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "References to attestations or evidence artifacts used in evaluation."
+    }
+  }
+}

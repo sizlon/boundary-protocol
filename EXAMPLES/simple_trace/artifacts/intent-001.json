@@ -1,0 +1,19 @@
+{
+  "intent_id": "intent:sample:001",
+  "subject": {
+    "system": "config-service",
+    "resource": "feature_flag_X"
+  },
+  "desired_state": {
+    "enabled": true
+  },
+  "declared_by": "operator_A",
+  "declared_at": "2026-01-10T10:00:00Z",
+  "relations": {
+    "revision_of": null,
+    "branch_of": null,
+    "supersedes": null,
+    "derived_from": null,
+    "merges": []
+  }
+}

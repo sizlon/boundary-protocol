@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boundaryprotocol.org/schemas/event.schema.json",
+  "title": "Boundary Protocol Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "artifact_ref",
+    "actor",
+    "timestamp"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Deterministic identifier of the event."
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "intent_declared",
+        "transition_attempted",
+        "state_observed",
+        "attestation_published",
+        "verdict_issued",
+        "dispute_raised"
+      ]
+    },
+    "artifact_ref": {
+      "type": "string",
+      "description": "Reference to the artifact created or referenced by this event."
+    },
+    "actor": {
+      "type": "string",
+      "description": "Identity responsible for emitting the event."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "causal_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "description": "References to causally preceding events."
+    }
+  }
+}

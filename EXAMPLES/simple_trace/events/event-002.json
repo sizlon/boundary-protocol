@@ -1,0 +1,10 @@
+{
+  "event_id": "event:sample:002",
+  "event_type": "transition_attempted",
+  "artifact_ref": "transition:sample:001",
+  "timestamp": "2026-01-10T10:00:03Z",
+  "emitted_by": "config-service",
+  "causal_refs": [
+    "event:sample:001"
+  ]
+}

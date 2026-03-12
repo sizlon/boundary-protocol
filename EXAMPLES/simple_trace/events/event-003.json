@@ -1,0 +1,10 @@
+{
+  "event_id": "event:sample:003",
+  "event_type": "state_observed",
+  "artifact_ref": "state:sample:001",
+  "timestamp": "2026-01-10T10:00:05Z",
+  "emitted_by": "monitor-service",
+  "causal_refs": [
+    "event:sample:002"
+  ]
+}

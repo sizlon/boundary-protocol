@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boundaryprotocol.org/schemas/dispute.schema.json",
+  "title": "Boundary Protocol Dispute",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dispute_id",
+    "subject_ref",
+    "related_verdicts",
+    "raised_by",
+    "raised_at",
+    "reason",
+    "status"
+  ],
+  "properties": {
+    "dispute_id": {
+      "type": "string",
+      "description": "Deterministic identifier of the dispute."
+    },
+    "subject_ref": {
+      "type": "string",
+      "description": "Reference to the disputed subject."
+    },
+    "related_verdicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "raised_by": {
+      "type": "string",
+      "description": "Identity raising the dispute."
+    },
+    "raised_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "closed", "superseded"]
+    }
+  }
+}

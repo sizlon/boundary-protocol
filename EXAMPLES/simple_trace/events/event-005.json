@@ -1,0 +1,10 @@
+{
+  "event_id": "event:sample:005",
+  "event_type": "verdict_evaluated",
+  "artifact_ref": "verdict:sample:001",
+  "timestamp": "2026-01-10T10:00:08Z",
+  "emitted_by": "verification-engine",
+  "causal_refs": [
+    "event:sample:004"
+  ]
+}

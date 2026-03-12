@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boundaryprotocol.org/schemas/intent.schema.json",
+  "title": "Boundary Protocol Intent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intent_id",
+    "subject",
+    "desired_state",
+    "declared_by",
+    "declared_at"
+  ],
+  "properties": {
+    "intent_id": {
+      "type": "string",
+      "description": "Deterministic identifier of the intent."
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "resource"],
+      "properties": {
+        "system": { "type": "string" },
+        "resource": { "type": "string" }
+      }
+    },
+    "desired_state": {
+      "type": "object",
+      "description": "Desired condition the intent aims to realize."
+    },
+    "declared_by": {
+      "type": "string",
+      "description": "Identity declaring the intent."
+    },
+    "declared_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "relations": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "revision_of": { "type": ["string", "null"] },
+        "branch_of": { "type": ["string", "null"] },
+        "supersedes": { "type": ["string", "null"] },
+        "derived_from": { "type": ["string", "null"] },
+        "merges": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      }
+    }
+  }
+}
