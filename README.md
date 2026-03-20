@@ -36,10 +36,9 @@ Boundary Protocol intentionally **does not define**:
 - system control mechanisms
 - orchestration frameworks
 - workflow engines
-- governance processes
 - execution platforms
 
-Those concerns belong to systems built **on top of** the protocol.
+Execution platforms belong to systems built **on top of** the protocol.
 
 The protocol exists only to make system behavior **auditable and verifiable**.
 
@@ -157,18 +156,24 @@ Boundary Protocol provides a structured mechanism to make those actions **observ
 This repository contains the **specification of the protocol**, not implementations.
 
 ```
-CONSTITUTION/     protocol philosophy and governance
-CORE/             semantic primitives of the protocol
-RESPONSIBILITY/   responsibility and authority model
-CONTRACTS/        artifact contracts
-VALIDATION/       integrity and validation rules
-SCHEMAS/          machine-readable schema definitions
-RATIONALE/        design explanations
-EXAMPLES/         example traces and protocol usage
-META/             versioning and protocol status
+CONSTITUTION/             protocol constitution and non-goals
+CORE/                     semantic primitives of the protocol
+RESPONSIBILITY/           responsibility and authority model
+CONTRACTS/                artifact contracts
+VALIDATION/               integrity and validation rules
+EXTENSIONS/GOVERNANCE/    optional generic governance extensions
+SCHEMAS/                  machine-readable schema definitions
+RATIONALE/                design explanations
+EXAMPLES/                 example traces and protocol usage
+META/                     versioning and protocol status
 ```
 
-Implementation projects (such as SDKs or verification engines) are maintained in **separate repositories**.
+This repository is not a governance framework.
+Only optional generic governance lifecycle extensions may remain here, under `EXTENSIONS/GOVERNANCE/`.
+Profile-specific governance, engine meaning, and executor lifecycle enforcement belong in sibling implementation repositories.
+
+Implementation projects (such as SDKs or executors) are maintained in **separate repositories**.
+Executor runtime/interface documentation belongs in those implementation repositories, not here.
 
 
 ---
