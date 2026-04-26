@@ -3,7 +3,8 @@
 ## 1. Purpose
 
 The Protocol State Publication Contract defines the sealed runtime/profile
-artifact emitted after verdict, attestation, and optional dispute publication.
+artifact emitted after verdict and attestation, with an optional dispute
+reference when a later dispute publication exists.
 
 This contract is intentionally narrow. It does not define state transitions,
 resolution logic, or a general state machine.
@@ -16,7 +17,7 @@ outcome in protocol-facing terms.
 ## 2. Core Definition
 
 A **Protocol State Publication** is a runtime/profile artifact that records
-the final published state of a sealed run.
+the published state of a sealed run.
 
 Conceptually:
 
@@ -92,7 +93,6 @@ For the first slice, supported values are:
 - `VERIFIED`
 - `FAILED`
 - `UNKNOWN`
-- `DISPUTED`
 
 ### observed_at
 
@@ -104,7 +104,8 @@ Sealed artifact references that support the final state publication.
 
 ### dispute_ref
 
-Optional reference to the published dispute artifact when the run is disputed.
+Optional reference to the published dispute artifact when a later dispute
+publication exists.
 
 ---
 
@@ -114,8 +115,8 @@ This artifact is publication-layer runtime/profile output.
 
 It is not a direct core state object from `CORE/STATE_MODEL.md`.
 
-The publication artifact summarizes the outcome of a sealed run after verdict,
-attestation, and optional dispute publication have been emitted.
+The publication artifact summarizes the outcome of a sealed run after verdict
+and attestation have been emitted.
 
 ---
 
@@ -125,10 +126,10 @@ The first slice follows these rules:
 
 1. `protocol_state.json` is always emitted
 2. it must derive only from already-published runtime/profile artifacts
-3. `state_code` is `DISPUTED` when a dispute publication exists
-4. otherwise verdict `PASS` maps to `VERIFIED`
-5. otherwise verdict `FAIL` maps to `FAILED`
-6. otherwise verdict `UNKNOWN` maps to `UNKNOWN`
+3. if a dispute publication exists, it must be linked through `dispute_ref`
+4. verdict `PASS` maps to `VERIFIED`
+5. verdict `FAIL` maps to `FAILED`
+6. verdict `UNKNOWN` maps to `UNKNOWN`
 7. `evidence_refs` must reference the published runtime/profile artifacts used
    to derive the state
 
@@ -146,6 +147,8 @@ protocol_dispute.json (optional)
 ```
 
 The state publication summarizes the final published status of the run.
+The dispute publication is an overlay on top of that status, not a separate
+state code.
 
 ---
 
@@ -154,4 +157,3 @@ The state publication summarizes the final published status of the run.
 Protocol state publication records are immutable once emitted.
 
 Corrections must be expressed as new publication records.
-

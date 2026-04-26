@@ -112,8 +112,8 @@ This artifact is publication-layer runtime/profile output.
 It is not the same thing as the generic protocol dispute core object defined
 elsewhere in this repository.
 
-The publication artifact is produced only after the runtime has already
-published verdict and attestation artifacts.
+The publication artifact is produced after the runtime has already published
+verdict and attestation artifacts.
 
 ---
 
@@ -145,6 +145,8 @@ protocol_attestation.json
 
 The dispute publication may refer to either the verdict or the attestation as
 its subject.
+It does not rewrite the published `protocol_state.json` state code; it only
+adds a separate dispute publication reference.
 
 ---
 
@@ -153,4 +155,3 @@ its subject.
 Protocol dispute publication records are immutable once emitted.
 
 Corrections must be expressed as new publication records.
-
