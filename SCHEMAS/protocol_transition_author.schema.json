@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boundaryprotocol.org/schemas/protocol_transition_author.schema.json",
+  "title": "Protocol Transition Author Trust Companion",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "artifact_ref",
+    "author_id",
+    "signature_envelope_ref",
+    "declared_at"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1"
+    },
+    "artifact_ref": {
+      "type": "string",
+      "const": "protocol_transition_event.json"
+    },
+    "author_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "signature_envelope_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "declared_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -132,6 +132,9 @@ If authored intent is absent, `protocol_intent_ref.json` may still serve as a
 compatibility bridge for systems that can only provide a reference helper.
 That helper is not a second protocol-native authoring surface.
 
+The authored intent may be accompanied by the author trust companion defined
+in [PROTOCOL_AUTHOR_TRUST_CONTRACT.md](/home/manny/Projects/sizlon/boundary-protocol/CONTRACTS/PROTOCOL_AUTHOR_TRUST_CONTRACT.md).
+
 ---
 
 ## 7. Relationship To Other Artifacts

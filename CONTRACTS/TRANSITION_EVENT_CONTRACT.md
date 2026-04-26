@@ -35,6 +35,9 @@ The Transition Event Contract ensures that transition records are:
 
 The contract does not define how transitions are executed. It only defines how they are **recorded**.
 
+The recorded transition event may also be accompanied by the author trust
+companion defined in [PROTOCOL_AUTHOR_TRUST_CONTRACT.md](/home/manny/Projects/sizlon/boundary-protocol/CONTRACTS/PROTOCOL_AUTHOR_TRUST_CONTRACT.md).
+
 ---
 
 ## 4. Minimal Event Structure
@@ -229,4 +232,3 @@ Key properties:
 - deterministic
 
 Transition events provide the execution history necessary for later verification within the Boundary Protocol.
-
