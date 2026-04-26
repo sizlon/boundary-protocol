@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://boundaryprotocol.org/schemas/protocol_state.schema.json",
+  "title": "Boundary Protocol State Publication",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "state_id",
+    "intent_ref",
+    "transition_ref",
+    "subject_state",
+    "state_code",
+    "observed_at",
+    "evidence_refs"
+  ],
+  "properties": {
+    "state_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "intent_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "transition_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state_code": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "FAILED",
+        "UNKNOWN",
+        "DISPUTED"
+      ]
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "dispute_ref": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

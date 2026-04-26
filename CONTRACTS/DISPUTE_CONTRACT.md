@@ -218,6 +218,9 @@ These mechanisms belong to higher-level systems.
 The runtime/profile publication form of a dispute record is defined separately
 in [PROTOCOL_DISPUTE_PUBLICATION_CONTRACT.md](/home/manny/Projects/sizlon/boundary-protocol/CONTRACTS/PROTOCOL_DISPUTE_PUBLICATION_CONTRACT.md).
 
+The final run-level state publication form is defined separately in
+[PROTOCOL_STATE_PUBLICATION_CONTRACT.md](/home/manny/Projects/sizlon/boundary-protocol/CONTRACTS/PROTOCOL_STATE_PUBLICATION_CONTRACT.md).
+
 ---
 
 ## 9. Summary
