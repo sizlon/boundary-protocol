@@ -128,6 +128,10 @@ meaning at runtime.
 Runtime bridge helpers such as `protocol_intent_ref.json` may consume the
 authored intent, but they do not replace it as the authored authority source.
 
+If authored intent is absent, `protocol_intent_ref.json` may still serve as a
+compatibility bridge for systems that can only provide a reference helper.
+That helper is not a second protocol-native authoring surface.
+
 ---
 
 ## 7. Relationship To Other Artifacts
@@ -149,4 +153,3 @@ valid.
 Protocol intents are immutable once authored.
 
 Any change must be expressed as a new authored intent record.
-
