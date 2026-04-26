@@ -215,6 +215,9 @@ Resolution mechanisms may include:
 
 These mechanisms belong to higher-level systems.
 
+The runtime/profile publication form of a dispute record is defined separately
+in [PROTOCOL_DISPUTE_PUBLICATION_CONTRACT.md](/home/manny/Projects/sizlon/boundary-protocol/CONTRACTS/PROTOCOL_DISPUTE_PUBLICATION_CONTRACT.md).
+
 ---
 
 ## 9. Summary
@@ -229,4 +232,3 @@ Key properties:
 - implementation neutrality
 
 Disputes extend the protocol's accountability model by ensuring that disagreements about verification outcomes are themselves part of the verifiable history.
-
